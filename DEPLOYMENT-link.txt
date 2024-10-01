@@ -1,0 +1,2 @@
+Frontend - https://e-commerce-frontend-jq47.onrender.com/
+AdminPanel - https://e-commerce-admin-dze2.onrender.com/
