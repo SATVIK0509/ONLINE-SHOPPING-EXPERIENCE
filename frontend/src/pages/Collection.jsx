@@ -12,6 +12,7 @@ const Collection = () => {
   const [category,setCategory] = useState([]);
   const [subCategory,setSubCategory] = useState([]);
   const [sortType,setSortType] = useState('relavent')
+  
 
   const toggleCategory = (e) => {
 
@@ -34,28 +35,32 @@ const Collection = () => {
     }
   }
 
+  // show the UI of products according to applied filter & search
   const applyFilter = () => {
 
     let productsCopy = products.slice();
-
+    // filter product according to search
     if (showSearch && search) {
       productsCopy = productsCopy.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
     }
 
+    // filter product according to category
     if (category.length > 0) {
       productsCopy = productsCopy.filter(item => category.includes(item.category));
     }
 
+    // filter product according to sub-category
     if (subCategory.length > 0 ) {
       productsCopy = productsCopy.filter(item => subCategory.includes(item.subCategory))
     }
-
+    
+    // update the filterProducts array so that it can re-render
     setFilterProducts(productsCopy)
 
   }
 
   const sortProduct = () => {
-
+    // based on filter products we have to sort 
     let fpCopy = filterProducts.slice();
 
     switch (sortType) {

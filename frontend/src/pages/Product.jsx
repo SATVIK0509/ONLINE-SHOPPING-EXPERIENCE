@@ -23,11 +23,12 @@ const Product = () => {
     })
 
   }
-
+  // based on the productId we will its corresponding data from products array
   useEffect(() => {
     fetchProductData();
   }, [productId,products])
 
+  // if we get the product data from products array using its productId
   return productData ? (
     <div className='border-t-2 pt-10 transition-opacity ease-in duration-500 opacity-100'>
       {/*----------- Product Data-------------- */}
